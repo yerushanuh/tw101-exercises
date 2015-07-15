@@ -72,7 +72,7 @@ set CMD_LINE_ARGS=%$
 set CLASSPATH=%APP_HOME%\lib\tw101-exercises-1.0.jar
 
 @rem Execute tw101-exercises
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %TW_EXERCISES_OPTS%  -classpath "%CLASSPATH%" com.thoughtworks.tw101.exercises.exercise4.Main %CMD_LINE_ARGS%
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %TW_EXERCISES_OPTS%  -classpath "%CLASSPATH%" com.thoughtworks.tw101.exercises.exercise5.Main %CMD_LINE_ARGS%
 
 :end
 @rem End local scope for the variables with windows NT shell

@@ -4,12 +4,16 @@ public class Rectangle {
     private final int length;
     private final int width;
 
+    public Rectangle() {
+        this(0, 0);
+    }
+
     public Rectangle(int length, int width) {
         this.length = length;
         this.width = width;
     }
 
     public int area(){
-        return -1;
+        return length * width;
     }
 }
