@@ -12,18 +12,22 @@ public class Orc implements Monster {
         this.currentHitpoints = INITIAL_HITPOINTS;
     }
 
+    @Override
     public void takeDamage(int amount) {
         this.currentHitpoints -= amount;
     }
 
+    @Override
     public String name() {
         return this.NAME;
     }
 
+    @Override
     public int currentHitpoints() {
         return this.currentHitpoints;
     }
 
+    @Override
     public void reportStatus() {
         System.out.print("Name: " + this.NAME);
         System.out.println(", hit points: " + this.currentHitpoints());
