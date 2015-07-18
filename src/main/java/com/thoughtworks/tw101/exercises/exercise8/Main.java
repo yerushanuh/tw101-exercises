@@ -6,6 +6,20 @@ package com.thoughtworks.tw101.exercises.exercise8;
 
 public class Main {
     public static void main(String[] args) {
+        final int MIN = 1;
+        final int MAX = 100;
 
+        int guess;
+        int randomInt;
+
+        Random random = new Random(MIN, MAX);
+        randomInt = random.getValue();
+
+        Interaction.summarizeProgram();
+
+        do {
+            Interaction.requestInput();
+            guess = Interaction.getInput();
+        } while (!Interaction.giveHintIfWrong(guess, randomInt));
     }
 }
