@@ -35,8 +35,8 @@ public class Interaction {
             if (input != null) {
                 guess = Integer.parseInt(input);
             }
-        } catch (NullPointerException e) {
-            System.err.println("Caught NullPointerException: " + e.getMessage());
+        } catch (NumberFormatException e) {
+            System.err.println("Caught NumberFormatException: " + e.getMessage());
         }
 
         return guess;
