@@ -32,6 +32,24 @@ public class FizzBuzz {
     }
 
     private static void fizzBuzz() {
+        boolean isRegularNumber = true;
 
+        for (int i = 1; i <= 100; i++) {
+            if (i % 3 == 0) {
+                System.out.print("Fizz");
+                isRegularNumber = false;
+            }
+            if (i % 5 == 0) {
+                System.out.print("Buzz");
+                isRegularNumber = false;
+            }
+            if (isRegularNumber) {
+                System.out.print(i);
+            }
+
+            System.out.println();
+
+            isRegularNumber = true;
+        }
     }
 }
