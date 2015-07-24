@@ -13,4 +13,4 @@ dependencies {
 
 apply plugin: 'application'
 
-mainClassName = 'com.thoughtworks.tw101.introductory_programming_exercises.FizzBuzz'
+mainClassName = 'com.thoughtworks.tw101.introductory_programming_exercises.PrimeFactors'
