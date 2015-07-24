@@ -13,7 +13,15 @@ public class DiamondExercises {
 //             ***
 //            *****
     private static void drawAnIsoscelesTriangle(int n) {
-
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n - 1; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k <= i * 2; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 
 //    Diamond
@@ -24,7 +32,27 @@ public class DiamondExercises {
 //             ***
 //              *
     private static void drawADiamond(int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n - 1; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k <= i * 2; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
 
+        n--;
+
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = i; j < n; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k <= i * 2; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 
 //    Diamond with Name
@@ -36,6 +64,28 @@ public class DiamondExercises {
 //            ***
 //             *
     private static void drawADiamondWithYourName(int n) {
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i; j < n - 1; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k <= i * 2; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
 
+        System.out.println("Yerusha");
+
+        n--;
+
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = i; j < n; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k <= i * 2; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 }
