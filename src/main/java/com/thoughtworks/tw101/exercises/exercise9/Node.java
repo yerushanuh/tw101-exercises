@@ -1,18 +1,63 @@
 package com.thoughtworks.tw101.exercises.exercise9;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Node {
     private String name;
+    private Node rightChild;
+    private Node leftChild;
 
     public Node(String name) {
         this.name = name;
+        this.rightChild = null;
+        this.leftChild = null;
     }
 
     public void add(String nameOfNewNode) {
+        if (nameOfNewNode == this.name) {
+            return;
+        }
+        else if (nameOfNewNode.compareTo(this.name) < 0) {
+            if (this.leftChild == null) {
+                this.leftChild = new Node(nameOfNewNode);
+                return;
+            }
+            else {
+                this.leftChild.add(nameOfNewNode);
+                return;
+            }
+        }
+        else if (nameOfNewNode.compareTo(this.name) > 0) {
+            if (this.rightChild == null) {
+                this.rightChild = new Node(nameOfNewNode);
+                return;
+            }
+            else {
+                this.rightChild.add(nameOfNewNode);
+                return;
+            }
+        }
+        return;
     }
 
     public List<String> names() {
-        return null;
+        List<String> list = new ArrayList<String>();
+        traverse(list);
+        return list;
+    }
+
+    public void traverse(List<String> list) {
+        if (this.leftChild != null) {
+            this.leftChild.traverse(list);
+        }
+
+        list.add(this.name);
+
+        if (this.rightChild != null) {
+            this.rightChild.traverse(list);
+        }
+
+        return;
     }
 }

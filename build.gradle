@@ -13,4 +13,4 @@ dependencies {
 
 apply plugin: 'application'
 
-mainClassName = 'com.thoughtworks.tw101.exercises.exercise8.Main'
+mainClassName = 'com.thoughtworks.tw101.exercises.exercise9.Main'
