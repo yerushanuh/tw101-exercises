@@ -15,30 +15,24 @@ public class Node {
     }
 
     public void add(String nameOfNewNode) {
-        if (nameOfNewNode == this.name) {
-            return;
+        if (nameOfNewNode.equals(this.name)) {
         }
         else if (nameOfNewNode.compareTo(this.name) < 0) {
             if (this.leftChild == null) {
                 this.leftChild = new Node(nameOfNewNode);
-                return;
             }
             else {
                 this.leftChild.add(nameOfNewNode);
-                return;
             }
         }
         else if (nameOfNewNode.compareTo(this.name) > 0) {
             if (this.rightChild == null) {
                 this.rightChild = new Node(nameOfNewNode);
-                return;
             }
             else {
                 this.rightChild.add(nameOfNewNode);
-                return;
             }
         }
-        return;
     }
 
     public List<String> names() {
@@ -47,7 +41,7 @@ public class Node {
         return list;
     }
 
-    public void traverse(List<String> list) {
+    private void traverse(List<String> list) {
         if (this.leftChild != null) {
             this.leftChild.traverse(list);
         }
@@ -57,7 +51,5 @@ public class Node {
         if (this.rightChild != null) {
             this.rightChild.traverse(list);
         }
-
-        return;
     }
 }

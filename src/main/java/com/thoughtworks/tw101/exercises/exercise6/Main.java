@@ -21,12 +21,12 @@ public class Main {
         monsterList.add(new Troll());
         monsterList.add(new Troll());
 
-        for (int i = 0; i < monsterList.size(); i++) {
-            monsterList.get(i).takeDamage(DAMAGE);
+        for (Monster monster: monsterList) {
+            monster.takeDamage(DAMAGE);
         }
 
-        for (int i = 0; i < monsterList.size(); i++) {
-            monsterList.get(i).reportStatus();
+        for (Monster monster: monsterList) {
+            monster.reportStatus();
         }
     }
 }
