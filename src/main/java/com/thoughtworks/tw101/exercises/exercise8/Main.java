@@ -9,17 +9,12 @@ public class Main {
         final int MIN = 1;
         final int MAX = 100;
 
-        int guess;
         int randomInt;
 
         Random random = new Random(MIN, MAX);
         randomInt = random.getValue();
 
-        Interaction.summarizeProgram();
-
-        do {
-            Interaction.requestInput();
-            guess = Interaction.getInput();
-        } while (!Interaction.giveHintIfWrong(guess, randomInt));
+        Interaction interaction = new Interaction(MIN, MAX, randomInt);
+        interaction.start();
     }
 }

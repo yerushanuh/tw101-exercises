@@ -9,24 +9,39 @@ import java.util.ArrayList;
  * Created by Yerusha on 2015-07-17.
  */
 public class Interaction {
+    private int lowerBound;
+    private int upperBound;
+    private int inputInt;
+    private int randomInt;
     private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     private static String input = "";
     private static int guess = 0;
     private static ArrayList list = new ArrayList();
 
-    private Interaction() {
-
+    public Interaction(int lowerBound, int upperBound, int randomInt) {
+        this.lowerBound = lowerBound;
+        this.upperBound = upperBound;
+        this.randomInt = randomInt;
     }
 
-    public static void summarizeProgram() {
-        System.out.println("Guess a random integer between 1 and 100.");
+    public void start() {
+        summarizeProgram();
+
+        do {
+            requestInput();
+        } while (!giveHintIfWrong(inputInt, randomInt));
     }
 
-    public static void requestInput() {
+    private void summarizeProgram() {
+        System.out.println("Guess a random integer between " + this.lowerBound + " and " + this.upperBound + ".");
+    }
+
+    private void requestInput() {
         System.out.print("Enter your guess: ");
+        inputInt = getInput();
     }
 
-    public static int getInput() {
+    private static int getInput() {
         try {
             input = reader.readLine();
         } catch (IOException e) {
@@ -44,7 +59,7 @@ public class Interaction {
         return guess;
     }
 
-    public static boolean giveHintIfWrong(int guess, int random) {
+    private boolean giveHintIfWrong(int guess, int random) {
         list.add(new Integer(guess));
 
         if (guess == random) {
